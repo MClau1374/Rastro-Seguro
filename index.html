@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#090b16"><title>RastroSeguro | Night City Edition</title>
+<style>
+:root{--bg:#f4f7fb;--ink:#182238;--muted:#64718a;--line:#dce4ef;--blue:#365cf5;--teal:#16b8a6;--navy:#10172a;--soft:#eaf0ff;--shadow:0 14px 36px #1a2a4c17}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}button{font:inherit;cursor:pointer}a{color:inherit}.topbar{position:sticky;top:0;z-index:5;background:#10172af5;color:white}.nav{max-width:1100px;margin:auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{display:flex;align-items:center;gap:10px;font-weight:850;text-decoration:none}.brand-icon{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--teal),#7be5d7);display:grid;place-items:center;color:#10223a;font-size:24px}.navlinks{display:flex;gap:20px;align-items:center}.navlinks a{text-decoration:none;color:#d7def0;font-size:.92rem}.navlinks .cta{background:var(--teal);color:#092b31;padding:9px 14px;border-radius:11px;font-weight:800}.hero{background:radial-gradient(ellipse at 80% 20%,#365cf54f,transparent 35%),linear-gradient(130deg,#10172a,#17274a 72%,#173b53);color:white}.hero-inner{max-width:1100px;margin:auto;padding:62px 22px 68px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:40px}.eyebrow,.kicker{font-size:.78rem;text-transform:uppercase;letter-spacing:1.4px;font-weight:850;color:#16a995}.eyebrow{color:#86f2df}.hero h1{font-size:clamp(2.5rem,5vw,4.5rem);line-height:1.04;letter-spacing:-2px;margin:18px 0}.hero h1 span{color:#7be5d7}.hero p{font-size:1.1rem;color:#d5deef;max-width:570px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{border:0;border-radius:12px;padding:11px 17px;font-weight:800;display:inline-flex;justify-content:center;align-items:center;gap:8px;text-decoration:none;transition:transform .15s}.btn:hover{transform:translateY(-1px)}.primary{background:var(--teal);color:#092b31}.secondary{background:#ffffff15;border:1px solid #ffffff40;color:white}.blue{background:var(--blue);color:white}.outline{background:transparent;border:1px solid var(--line);color:var(--ink)}.hero-art{min-height:290px;display:grid;place-items:center}.orbit{width:min(300px,75vw);aspect-ratio:1;border:1px solid #ffffff3b;border-radius:50%;display:grid;place-items:center;position:relative}.orbit:before,.orbit:after{content:"";position:absolute;border:1px dashed #ffffff38;border-radius:50%;inset:28px}.orbit:after{inset:58px}.shield{z-index:1;width:135px;height:155px;clip-path:polygon(50% 0,94% 17%,88% 66%,50% 100%,12% 66%,6% 17%);background:linear-gradient(145deg,#7be5d7,#35bcae);display:grid;place-items:center;color:#10223a;font-size:55px}.bubble{position:absolute;background:white;color:var(--ink);padding:9px 12px;border-radius:12px;box-shadow:var(--shadow);font-weight:750;font-size:.84rem}.one{top:22px;left:-8px}.two{right:-12px;top:100px}.three{bottom:20px;left:12px}.section{max-width:1100px;margin:auto;padding:60px 22px}.section-head{max-width:680px;margin-bottom:26px}.section-head p,.muted{color:var(--muted)}h2{font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.12;letter-spacing:-.7px;margin:8px 0 12px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card,.tool-card{background:white;border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow)}.card-icon{width:46px;height:46px;display:grid;place-items:center;background:var(--soft);border-radius:14px;font-size:23px}.card h3{margin:14px 0 7px}.card p{margin:0;color:var(--muted);font-size:.95rem}.callout{margin-top:18px;padding:17px 19px;border-radius:16px;background:#e4fbf6;border:1px solid #b6eee4;display:flex;gap:13px}.callout p{margin:3px 0 0;color:#345f60}.interactive{background:#eaf0ff;border-block:1px solid #d8e2ff}.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}.tool-label{display:inline-block;border-radius:8px;padding:4px 9px;background:#e9edff;color:#2947ce;font-size:.75rem;font-weight:850}.tool-card h3{font-size:1.4rem;line-height:1.2;margin:13px 0 8px}.quiz-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;font-size:.88rem;font-weight:800}.progress-wrap{height:8px;background:#e6eaf2;border-radius:20px;overflow:hidden;margin:10px 0 18px}.progress{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--teal));transition:width .25s}.question p{font-weight:750;font-size:1.08rem;margin:0 0 13px}.option{display:flex;gap:10px;align-items:flex-start;padding:12px;border:1px solid var(--line);border-radius:12px;margin:8px 0;cursor:pointer;background:white}.option:hover{border-color:#8498ff;background:#f8f9ff}.option input{margin-top:5px;accent-color:var(--blue)}.option:has(input:checked){border-color:var(--blue);background:#f0f3ff}.quiz-nav{display:flex;justify-content:space-between;gap:10px;margin-top:18px}.quiz-nav button:disabled{opacity:.42;cursor:not-allowed;transform:none}.feedback{display:none;padding:14px 15px;border-radius:12px;margin-top:16px;font-size:.93rem}.feedback.show{display:block}.feedback.good{background:#e4fbf2;color:#075c4d}.feedback.bad{background:#fff2e0;color:#814800}.checklist{display:grid;gap:10px;margin:18px 0}.check-row{display:flex;gap:11px;align-items:flex-start;padding:12px;border:1px solid var(--line);border-radius:13px;cursor:pointer;background:white}.check-row input{margin-top:5px;accent-color:var(--blue);width:17px;height:17px;flex-shrink:0}.check-row span{font-size:.94rem}.result{border-radius:15px;background:#f2f5ff;border:1px solid #dce4ff;padding:16px;margin-top:16px}.result h4{margin:0 0 5px}.result p{margin:0;color:#4b5a78}.scoreline{display:flex;justify-content:space-between;gap:10px;font-weight:800;font-size:.9rem}.saved-note{font-size:.8rem;color:#71809b;margin-top:10px}.tips-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.tip{display:flex;gap:13px;background:white;border:1px solid var(--line);border-radius:16px;padding:17px}.tip-num{flex-shrink:0;width:34px;height:34px;border-radius:10px;background:var(--navy);color:white;display:grid;place-items:center;font-weight:800}.tip p{margin:4px 0 0;color:var(--muted);font-size:.93rem}.tip strong{display:block}.footer{background:var(--navy);color:#dbe3f4}.footer-inner{max-width:1100px;margin:auto;padding:27px 22px;display:flex;justify-content:space-between;gap:20px;align-items:center}.footer p{margin:0;font-size:.88rem;color:#aebbd4}.small-btn{background:transparent;color:#dbe3f4;border:1px solid #59637b;border-radius:10px;padding:8px 11px}
+
+.game-section{background:linear-gradient(135deg,#10172a,#182b4b);color:white}
+.game-section .section-head p{color:#c8d3e9}
+.game-panel{max-width:780px;margin:auto;background:#fff;color:var(--ink);border-radius:22px;padding:clamp(20px,4vw,32px);box-shadow:0 20px 55px #0003}
+.game-top{display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:800;font-size:.9rem}
+.game-pill{background:#e8edff;color:#2947ce;border-radius:99px;padding:6px 11px;font-size:.8rem}
+.game-scene{margin:20px 0;padding:24px 20px;border-radius:16px;background:#f2f5ff;border:1px solid #dce4ff}
+.game-emoji{font-size:2.3rem;margin-bottom:8px}
+.game-scene h3{font-size:1.3rem;line-height:1.25;margin:0 0 9px}
+.game-scene p{margin:0;color:#56627b}
+.game-choices{display:grid;gap:10px}
+.game-choice{display:flex;align-items:flex-start;gap:12px;text-align:left;width:100%;padding:14px;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:13px;cursor:pointer;font-weight:650}
+.game-choice:hover:not(:disabled){border-color:var(--blue);background:#f7f8ff}
+.game-choice:disabled{cursor:default;opacity:1}
+.game-choice .choice-icon{font-size:1.2rem}
+.game-choice.correct{border-color:#19a889;background:#e8faf5}
+.game-choice.wrong{border-color:#e2a24d;background:#fff5e7}
+.game-feedback{display:none;margin-top:15px;padding:15px;border-radius:13px;background:#eef2ff;color:#34436a}
+.game-feedback.show{display:block}
+.game-feedback strong{display:block;margin-bottom:4px}
+.game-actions{display:flex;justify-content:flex-end;margin-top:17px}
+.game-result{text-align:center;padding:12px}
+.game-score{font-size:2.6rem;line-height:1.1;font-weight:900;color:var(--blue);margin:12px 0}
+.timer-panel{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:14px 0 4px;padding:12px 14px;border:1px solid #dce4ef;border-radius:14px;background:#fbfcff}.timer-display{font-variant-numeric:tabular-nums;font-size:1.35rem;font-weight:900;letter-spacing:1px;color:#182238}.timer-label{font-size:.8rem;color:#64718a;font-weight:750}.timer-buttons{display:flex;gap:8px;flex-wrap:wrap}.timer-buttons .btn{padding:8px 12px;font-size:.85rem}.timer-buttons .btn:disabled{opacity:.45;cursor:not-allowed}
+@media(max-width:760px){.game-panel{padding:18px}.game-scene{padding:19px 16px}.game-top{align-items:flex-start}}
+\n@media(max-width:760px){.nav{padding:11px 16px}.navlinks{gap:10px}.navlinks a:not(.cta){display:none}.hero-inner{grid-template-columns:1fr;padding:48px 19px 38px;gap:10px}.hero h1{letter-spacing:-1px}.hero-art{min-height:260px}.orbit{width:245px}.shield{width:110px;height:128px;font-size:44px}.one{left:0}.two{right:0}.section{padding:45px 17px}.grid3,.tool-grid,.tips-grid{grid-template-columns:1fr}.card,.tool-card{padding:19px}.footer-inner{align-items:flex-start;flex-direction:column}}
+.habit-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);gap:20px;align-items:start}
+.habit-card{background:var(--card,#fff);border:1px solid var(--line,#e1e7f0);border-radius:18px;padding:20px;box-shadow:0 8px 26px rgba(25,45,80,.05)}
+.habit-list{display:grid;gap:10px;margin-top:16px}
+.habit-item{display:flex;align-items:center;gap:12px;padding:13px;border:1px solid var(--line,#e1e7f0);border-radius:13px;background:var(--surface,#fff)}
+.habit-item input[type=checkbox]{width:21px;height:21px;accent-color:var(--blue,#3167e3);flex-shrink:0}
+.habit-item label{flex:1;cursor:pointer;font-weight:700}
+.habit-item small{display:block;color:var(--muted,#68758b);font-weight:500;margin-top:3px}
+.habit-delete{border:0;background:transparent;color:#7b8496;font-size:1.2rem;cursor:pointer;padding:5px 8px;border-radius:8px}
+.habit-delete:hover{background:#fff0f0;color:#b42318}
+.habit-form{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.habit-form input{flex:1;min-width:150px;padding:11px 12px;border:1px solid var(--line,#dce3ee);border-radius:10px;font:inherit}
+.habit-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.habit-stat{padding:14px;border-radius:13px;background:var(--soft,#f4f7fc)}
+.habit-stat strong{display:block;font-size:1.65rem;line-height:1.2}
+.habit-stat span{font-size:.82rem;color:var(--muted,#68758b)}
+.habit-progress{height:10px;background:#e9eef7;border-radius:999px;overflow:hidden;margin-top:12px}
+.habit-progress>div{height:100%;width:0;background:linear-gradient(90deg,#4385f5,#29b99a);transition:width .2s}
+.habit-date{color:var(--muted,#68758b);font-size:.9rem;margin-top:4px}
+.habit-empty{color:var(--muted,#68758b);padding:14px 0}
+.habit-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+@media(max-width:760px){.habit-layout{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
+/* Adaptación móvil: navegación visible, controles táctiles y sin desbordamientos */
+img,svg,video,canvas{max-width:100%;height:auto}
+html{scroll-padding-top:125px;-webkit-text-size-adjust:100%}
+body{overflow-x:hidden;overflow-wrap:break-word}
+button,.btn,input,select,textarea{max-width:100%;touch-action:manipulation}
+:focus-visible{outline:3px solid #16b8a6;outline-offset:3px}
+@media(max-width:760px){
+  .topbar{position:sticky;top:0}
+  .nav{display:flex;flex-wrap:wrap;gap:8px;padding:9px 12px}
+  .brand{font-size:1rem;min-height:42px}
+  .brand-icon{width:34px;height:34px;flex-shrink:0}
+  .navlinks{display:flex;width:100%;max-width:100%;gap:8px;overflow-x:auto;overflow-y:hidden;padding:2px 0 7px;scrollbar-width:thin;white-space:nowrap;-webkit-overflow-scrolling:touch;justify-content:flex-start}
+  .navlinks a,.navlinks a:not(.cta){display:inline-flex;align-items:center;min-height:40px;padding:8px 10px;flex:0 0 auto;font-size:.84rem;border-radius:9px;background:#ffffff12}
+  .navlinks .cta{background:var(--teal);padding:8px 12px}
+  .hero-inner{grid-template-columns:minmax(0,1fr);padding:35px 17px 28px;gap:0}
+  .hero h1{font-size:clamp(2.15rem,10vw,3.25rem);letter-spacing:-.8px;overflow-wrap:normal}
+  .hero p{font-size:1rem}
+  .hero-art{min-height:225px;margin-top:8px}
+  .orbit{width:min(230px,70vw)}
+  .bubble{font-size:.74rem;padding:7px 9px}
+  .one{left:-4px}.two{right:-5px;top:80px}.three{left:0;bottom:14px}
+  .section{padding:36px 15px}
+  .grid3,.tool-grid,.tips-grid,.habit-layout{grid-template-columns:minmax(0,1fr)}
+  .card,.tool-card,.habit-card{padding:16px;border-radius:16px;min-width:0}
+  .callout{padding:14px;align-items:flex-start}
+  .actions{gap:9px}
+  .actions .btn{flex:1 1 145px}
+  .quiz-nav{flex-wrap:wrap}
+  .quiz-nav button{flex:1 1 120px;min-height:44px}
+  .game-top{flex-wrap:wrap;gap:8px}
+  .game-panel{padding:15px!important}
+  .game-scene{padding:15px 12px!important}
+  .game-actions .btn{width:100%}
+  .timer-panel{align-items:flex-start;flex-direction:column}
+  .timer-buttons{width:100%}
+  .timer-buttons .btn{flex:1 1 90px;min-height:42px}
+  .habit-form{display:flex;flex-direction:column}
+  .habit-form input,.habit-form button{width:100%;min-width:0;min-height:44px}
+  .habit-actions .btn{flex:1 1 135px;min-height:42px}
+  .habit-item{align-items:flex-start;gap:9px;padding:11px}
+  .habit-item label{min-width:0;overflow-wrap:anywhere}
+  .habit-delete{min-width:40px;min-height:40px;flex-shrink:0}
+  .footer-inner{padding:23px 16px}
+}
+@media(max-width:380px){
+  .brand{font-size:.95rem}
+  .hero-inner{padding-inline:14px}
+  .section{padding-inline:12px}
+  .card,.tool-card,.habit-card{padding:13px}
+  .habit-stats{grid-template-columns:1fr 1fr;gap:7px}
+  .habit-stat{padding:10px}
+  .habit-stat strong{font-size:1.4rem}
+  .timer-display{font-size:1.15rem}
+}
+@media(hover:none){.btn:hover{transform:none}}
+
+/* RASTROSEGURO // NIGHT CITY EDITION */
+:root{--bg:#090b16;--ink:#f4f5ff;--muted:#b0b6d1;--line:#34344f;--blue:#ff2b78;--teal:#00f5e9;--navy:#090b16;--soft:#20152e;--shadow:0 0 0 1px #ff2b7830,0 12px 32px #0008;--card:#111426}
+html{background:#090b16;scroll-padding-top:82px}
+body{background:radial-gradient(ellipse at 15% 8%,#1a1230 0,transparent 35%),radial-gradient(ellipse at 90% 45%,#071f2b 0,transparent 32%),#090b16;color:var(--ink);}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:10;opacity:.10;background:repeating-linear-gradient(to bottom,transparent 0,transparent 3px,#b8faff 4px);mix-blend-mode:screen}
+.topbar{background:#080914f5;border-bottom:1px solid #00f5e966;box-shadow:0 5px 28px #00f5e90d;backdrop-filter:blur(12px)}
+.brand{letter-spacing:.5px;text-transform:uppercase}.brand-icon{border-radius:4px;background:linear-gradient(135deg,#ff2b78,#ffcf4a);color:#080914;box-shadow:3px 3px 0 #00f5e9;font-weight:950}
+.navlinks a{color:#c9cce2}.navlinks a:hover{color:var(--teal)}.navlinks .cta{background:var(--teal);color:#071017;border-radius:3px;box-shadow:3px 3px 0 #ff2b78}
+.hero{background:radial-gradient(ellipse at 78% 32%,#ff2b7830,transparent 33%),radial-gradient(ellipse at 25% 80%,#00f5e91c,transparent 35%),linear-gradient(125deg,#090b16,#151027 58%,#08202a);border-bottom:1px solid #ff2b7855;position:relative;overflow:hidden}
+.hero:after{content:"NIGHT CITY // YOUR DATA IS YOURS";position:absolute;right:22px;bottom:14px;color:#00f5e9;opacity:.55;font-size:.65rem;letter-spacing:2px;font-weight:900}
+.eyebrow,.kicker{color:#00f5e9;letter-spacing:2px}.eyebrow{color:#ffcf4a}.hero h1{text-transform:uppercase;letter-spacing:-1.7px;text-shadow:3px 3px 0 #ff2b782c}.hero h1 span{color:#00f5e9;text-shadow:3px 3px 0 #ff2b78}.hero p{color:#c7cce2}
+.btn{border-radius:4px;text-transform:uppercase;letter-spacing:.35px;font-size:.85rem;box-shadow:3px 3px 0 #0006}.primary,.blue{background:#ff2b78;color:#fff}.primary:hover,.blue:hover{background:#ff4d8e}.secondary{border-radius:4px;border-color:#00f5e977;color:#e9faff;background:#00f5e910}.outline{border-radius:4px;background:#101326;color:#e9ecff;border-color:#55516d}.outline:hover{border-color:#00f5e9;color:#00f5e9}
+.orbit{border-color:#00f5e96b;box-shadow:0 0 35px #00f5e915,inset 0 0 35px #ff2b7810}.orbit:before,.orbit:after{border-color:#ff2b7870}.shield{background:linear-gradient(145deg,#00f5e9,#00a8bd);color:#071017;filter:drop-shadow(0 0 15px #00f5e95c);clip-path:polygon(50% 0,94% 17%,88% 66%,50% 100%,12% 66%,6% 17%)}.bubble{background:#15172b;color:#f5f5ff;border:1px solid #00f5e966;border-radius:4px;box-shadow:4px 4px 0 #ff2b7830}.one,.three{border-color:#ff2b7880}
+.section{position:relative}.section-head p,.muted{color:var(--muted)}h2{text-transform:uppercase;color:#f7f4ff;letter-spacing:.2px}h3{color:#f7f4ff}.grid3 .card,.tool-card,.habit-card{background:linear-gradient(145deg,#15172a,#101222);border:1px solid #37344f;border-radius:8px;box-shadow:var(--shadow)}.card:hover,.tool-card:hover,.habit-card:hover{border-color:#00f5e98c}.card-icon{background:#25172e;border:1px solid #ff2b7855;border-radius:6px;color:#00f5e9}.card p,.tip p{color:#b7bdd6}.callout{background:#0e292d;border:1px solid #00f5e966;border-left:4px solid #00f5e9;border-radius:4px;color:#f3ffff}.callout p{color:#bce9e9}
+.interactive{background:linear-gradient(180deg,#0c0d1b,#111023);border-block:1px solid #ff2b7855}.tool-label{background:#2c1530;color:#ff8fb7;border:1px solid #ff2b7866;border-radius:3px;letter-spacing:1px}.progress-wrap{background:#28263b;border-radius:2px;border:1px solid #34334a}.progress{background:linear-gradient(90deg,#ff2b78,#ffcf4a,#00f5e9);box-shadow:0 0 12px #00f5e94a}.option,.check-row{background:#111426;color:#e8eaff;border-color:#37344f;border-radius:5px}.option:hover{background:#1c1930;border-color:#00f5e9}.option:has(input:checked){background:#21172c;border-color:#ff2b78}.option input,.check-row input{accent-color:#ff2b78}.feedback.good{background:#0d302e;color:#8ffcf0;border:1px solid #00f5e966}.feedback.bad{background:#321622;color:#ffb3cb;border:1px solid #ff2b7866}.result{background:#111a2a;border-color:#00f5e944}.result p{color:#bac7df}.saved-note{color:#9ba5c5}.tip{background:#111426;border-color:#34344f;border-radius:6px}.tip-num{background:#ff2b78;color:white;border-radius:4px}.footer{background:#070811;border-top:1px solid #00f5e966}.footer p{color:#aeb5d1}.small-btn{border-radius:4px}
+.game-section{background:radial-gradient(ellipse at 15% 20%,#ff2b7814,transparent 36%),linear-gradient(140deg,#080a14,#141026 55%,#071b25);border-block:1px solid #00f5e933}.game-section .section-head p{color:#c1c7e0}.game-panel{background:#111426;color:#f3f4ff;border:1px solid #4a3556;border-radius:8px;box-shadow:0 0 0 1px #00f5e91c,0 20px 60px #0008}.game-pill{background:#25152e;color:#ff9cbe;border:1px solid #ff2b7866;border-radius:3px}.game-scene{background:linear-gradient(135deg,#17172b,#101c2a);border:1px solid #00f5e94f;border-left:4px solid #00f5e9;border-radius:5px}.game-scene p{color:#bfc7df}.game-choice{background:#0d1020;color:#e9ebff;border-color:#38364f;border-radius:5px}.game-choice:hover:not(:disabled){background:#1b1930;border-color:#00f5e9}.game-choice.correct{background:#0c302d;border-color:#00f5e9;color:#a5fff5}.game-choice.wrong{background:#321622;border-color:#ff2b78;color:#ffc0d3}.game-feedback{background:#151c30;color:#dce5ff;border:1px solid #444466;border-radius:5px}.game-score{color:#00f5e9;text-shadow:2px 2px 0 #ff2b78}.timer-panel{background:#0d1020;border-color:#3b3854;border-radius:5px}.timer-display{color:#00f5e9;text-shadow:0 0 14px #00f5e933}.timer-label{color:#ffcf4a}.habit-date{color:#00f5e9}.habit-form input,.habit-form select,.habit-form textarea,input[type="text"]{background:#0a0d1b;color:#f3f4ff;border:1px solid #45405e;border-radius:4px}.habit-form input::placeholder{color:#8991b1}.habit-item{background:#0d1020;border-color:#37344f;color:#f0f1ff}.habit-stat{background:#0c1020;border-color:#34344f}.habit-stat strong{color:#00f5e9}
+::selection{background:#ff2b78;color:#fff}
+@media(max-width:760px){.hero:after{right:12px;bottom:8px;font-size:.55rem}.navlinks .cta{padding:8px 10px}.hero h1{letter-spacing:-.8px}.grid3 .card,.tool-card,.habit-card{background:#111426}.game-panel{border-radius:6px}.hero-art{overflow:visible}}
+@media(prefers-reduced-motion:no-preference){.hero h1 span{animation:neonPulse 3.8s ease-in-out infinite alternate}@keyframes neonPulse{from{text-shadow:2px 2px 0 #ff2b78,0 0 7px #00f5e933}to{text-shadow:2px 2px 0 #ff2b78,0 0 17px #00f5e966}}}
+
+</style></head><body>
+<header class="topbar"><nav class="nav" aria-label="Navegación principal"><a class="brand" href="#inicio"><span class="brand-icon">⌁</span> RastroSeguro</a><div class="navlinks"><a href="#info">¿Qué es?</a><a href="#consejos">Consejos</a><a href="#juego">Juego</a><a href="#cronometro">Cronómetro</a><a href="#habitos">Hábitos</a><a class="cta" href="#interactivo">Ponete a prueba ↗</a></div></nav></header>
+<main><section class="hero" id="inicio"><div class="hero-inner"><div><div class="eyebrow">Ciudadanía digital · TIC</div><h1>Tu vida online deja <span>huella.</span></h1><p>Cada publicación, comentario y clic puede dejar un rastro. Aprendé a reconocerlo y tomá mejores decisiones para cuidar tu privacidad.</p><div class="actions"><a class="btn primary" href="#interactivo">Explorar mi rastro →</a><a class="btn secondary" href="#info">Conocer el tema</a></div></div><div class="hero-art" aria-label="Ilustración de seguridad digital"><div class="orbit"><div class="shield">✓</div><div class="bubble one">📍 Ubicación</div><div class="bubble two">💬 Comentarios</div><div class="bubble three">📸 Publicaciones</div></div></div></div></section>
+<section class="section" id="info"><div class="section-head"><div class="kicker">01 / Entender</div><h2>¿Qué es la huella digital?</h2><p>Es el rastro de información que dejamos al usar internet. Puede ser visible para otras personas hoy y seguir circulando más adelante.</p></div><div class="grid3"><article class="card"><div class="card-icon">🖐️</div><h3>Huella activa</h3><p>Lo que compartís intencionalmente: fotos, historias, comentarios, videos o reseñas.</p></article><article class="card"><div class="card-icon">🛰️</div><h3>Huella pasiva</h3><p>Datos que se pueden registrar al navegar, como cookies, visitas a páginas o datos aproximados del dispositivo.</p></article><article class="card"><div class="card-icon">🧩</div><h3>Tu identidad online</h3><p>La información publicada puede combinarse y dar una imagen de tus intereses, hábitos o actividades.</p></article></div><div class="callout"><span style="font-size:24px">💡</span><div><strong>Antes de publicar, hacé una pausa.</strong><p>Preguntate: ¿me sentiría bien si esto lo viera alguien fuera de mi círculo? ¿Estoy mostrando datos de otra persona sin permiso?</p></div></div></section>
+<section class="interactive" id="interactivo"><div class="section"><div class="section-head"><div class="kicker">02 / Aprender haciendo</div><h2>Probá tus decisiones digitales</h2><p>Estas actividades son de práctica: no revisan tus redes ni envían información. Tus respuestas se procesan en este dispositivo.</p></div><div class="tool-grid">
+<article class="tool-card"><span class="tool-label">ACTIVIDAD 1 · MINI QUIZ</span><h3>¿Qué harías en internet?</h3><p class="muted">Una pregunta por pantalla. Elegí tu respuesta y avanzá hasta ver el resultado.</p><form id="quizForm"><div class="quiz-top"><span id="questionCount">Pregunta 1 de 3</span><span id="questionPct">33%</span></div><div class="progress-wrap"><div class="progress" id="quizProgress"></div></div><div id="questionArea" class="question" aria-live="polite"></div><div class="quiz-nav"><button class="btn outline" type="button" id="prevBtn" disabled>← Anterior</button><button class="btn blue" type="button" id="nextBtn">Siguiente →</button></div><div class="feedback" id="quizFeedback" role="status" aria-live="polite"></div></form></article>
+<article class="tool-card"><span class="tool-label">ACTIVIDAD 2 · MI CHECKLIST</span><h3>Revisá tus hábitos</h3><p class="muted">Marcá las prácticas que ya tenés en cuenta. La recomendación se adapta a tu progreso.</p><div class="progress-wrap"><div class="progress" id="habitProgress"></div></div><div class="scoreline"><span id="progressText">0 de 5 hábitos</span><span id="progressPct">0%</span></div><div class="checklist"><label class="check-row"><input type="checkbox" class="habit"><span>Reviso la privacidad de mis cuentas.</span></label><label class="check-row"><input type="checkbox" class="habit"><span>Uso contraseñas diferentes y difíciles de adivinar.</span></label><label class="check-row"><input type="checkbox" class="habit"><span>Pienso antes de publicar fotos, comentarios o historias.</span></label><label class="check-row"><input type="checkbox" class="habit"><span>Evito compartir dirección, horarios o ubicación en tiempo real.</span></label><label class="check-row"><input type="checkbox" class="habit"><span>Pido permiso antes de publicar imágenes de otras personas.</span></label></div><div class="result" aria-live="polite"><h4 id="habitTitle">Tu próximo paso</h4><p id="habitAdvice">Elegí los hábitos que ya practicás para recibir una recomendación.</p></div><p class="saved-note">La checklist se guarda únicamente en este navegador.</p><button class="btn outline" type="button" id="resetHabits" style="margin-top:12px">Reiniciar checklist</button></article>
+</div></div></section>
+
+<section class="game-section" id="juego"><div class="section">
+  <div class="section-head"><div class="kicker" style="color:#7be5d7">03 / Modo misión</div><h2>Juego: ¡Misión huella segura!</h2><p>Convertite en detective digital. Leé cada situación y elegí la decisión que mejor cuida tu privacidad y la de los demás. Sumás puntos por cada decisión segura.</p></div>
+  <div class="game-panel">
+    <div class="game-top"><span id="gameRound">Misión 1 de 5</span><span class="game-pill" id="gameScore">⭐ 0 puntos</span></div>
+    <div class="progress-wrap"><div class="progress" id="gameProgress" style="width:20%"></div></div>
+    <div id="gameContent">
+      <div class="game-scene"><div class="game-emoji">📸</div><h3>Antes de publicar</h3><p>Una foto que querés subir muestra el frente de tu casa y el número de la puerta. ¿Qué hacés?</p></div>
+      <div class="game-choices"><button class="game-choice" type="button">Publicarla tal como está.</button><button class="game-choice" type="button">Editar la foto para ocultar la dirección.</button><button class="game-choice" type="button">Agregar la ubicación exacta para que la vean todos.</button></div>
+    </div>
+    <div class="game-feedback" id="gameFeedback" role="status" aria-live="polite"></div>
+    <div class="game-actions"><button class="btn blue" type="button" id="gameNext" disabled>Siguiente misión →</button></div>
+  </div>
+</div></section>
+\n
+<section class="section" id="cronometro">
+  <div class="section-head"><div class="kicker">04 / Herramienta independiente</div><h2>⏱ Cronómetro</h2><p>Usalo para medir el tiempo que quieras: estudiar, hacer una actividad o completar un desafío. Funciona por separado del juego.</p></div>
+  <div class="game-panel" style="max-width:720px;margin:0 auto;text-align:center">
+    <div class="timer-label">TIEMPO TRANSCURRIDO</div>
+    <div class="timer-display" id="standaloneTimer" role="timer" aria-live="off" style="font-size:clamp(3rem,10vw,5rem);margin:18px 0 24px">00:00.00</div>
+    <div class="timer-buttons" style="justify-content:center">
+      <button class="btn blue" type="button" id="standaloneStart">▶ Iniciar</button>
+      <button class="btn outline" type="button" id="standalonePause" disabled>⏸ Pausar</button>
+      <button class="btn outline" type="button" id="standaloneReset">↻ Reiniciar</button>
+    </div>
+    <p id="standaloneStatus" role="status" style="margin:16px 0 0;color:var(--muted)">Listo para empezar.</p>
+  </div>
+</section>
+
+<section class="section" id="habitos">
+  <div class="section-head"><div class="kicker">05 / Organización personal</div><h2>📅 Registro de hábitos</h2><p>Elegí hábitos que quieras practicar y marcá cada día los que cumpliste. Tus datos se guardan solo en este navegador.</p></div>
+  <div class="habit-layout">
+    <div class="habit-card">
+      <div style="display:flex;justify-content:space-between;align-items:start;gap:12px;flex-wrap:wrap">
+        <div><h3 style="margin:0">Mis hábitos</h3><div class="habit-date" id="habitToday">Hoy</div></div>
+        <button class="btn outline" type="button" id="habitTodayBtn">Ir a hoy</button>
+      </div>
+      <div class="habit-form">
+        <input id="habitName" type="text" maxlength="60" placeholder="Ej.: Leer 15 minutos" aria-label="Nombre del nuevo hábito">
+        <button class="btn blue" type="button" id="habitAdd">＋ Agregar</button>
+      </div>
+      <div id="habitList" class="habit-list"></div>
+      <div class="habit-actions">
+        <button class="btn outline" type="button" id="habitClearToday">Desmarcar el día</button>
+      </div>
+      <p id="habitMessage" role="status" style="margin:12px 0 0;color:var(--muted)">Agregá tu primer hábito para empezar.</p>
+    </div>
+    <aside class="habit-card">
+      <h3 style="margin:0">Resumen del día</h3>
+      <div class="habit-stats">
+        <div class="habit-stat"><strong id="habitDone">0</strong><span>Hábitos cumplidos</span></div>
+        <div class="habit-stat"><strong id="habitTotal">0</strong><span>Hábitos registrados</span></div>
+      </div>
+      <div class="habit-progress" role="progressbar" aria-label="Progreso diario" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="habitProgress"><div id="habitProgressBar"></div></div>
+      <p id="habitPercent" style="font-weight:800;margin:10px 0 0">0% completado</p>
+      <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--line,#e1e7f0)">
+        <h3 style="margin:0 0 8px">Cómo usarlo</h3>
+        <p style="color:var(--muted);margin:0">1. Agregá un hábito sencillo.<br>2. Marcá la casilla cuando lo cumplas.<br>3. Volvé cada día para llevar tu registro.</p>
+      </div>
+      <div class="habit-actions">
+        <button class="btn outline" type="button" id="habitExport">⬇ Exportar registro</button>
+      </div>
+    </aside>
+  </div>
+</section>
+<section class="section" id="consejos"><div class="section-head"><div class="kicker">03 / Cuidarte</div><h2>Seis consejos para dejar un mejor rastro</h2><p>No se trata de dejar de usar internet, sino de usarlo con atención y respeto.</p></div><div class="tips-grid"><article class="tip"><span class="tip-num">1</span><div><strong>Pensá antes de compartir</strong><p>Una publicación puede guardarse o reenviarse aunque después la borres.</p></div></article><article class="tip"><span class="tip-num">2</span><div><strong>Ajustá la privacidad</strong><p>Revisá quién puede ver tus publicaciones, historias y lista de contactos.</p></div></article><article class="tip"><span class="tip-num">3</span><div><strong>Protegé tus cuentas</strong><p>Usá contraseñas únicas, activá la verificación en dos pasos cuando esté disponible y no las compartas.</p></div></article><article class="tip"><span class="tip-num">4</span><div><strong>Limitá los datos personales</strong><p>Evitá publicar documentos, dirección, rutinas o ubicación en tiempo real.</p></div></article><article class="tip"><span class="tip-num">5</span><div><strong>Respetá a los demás</strong><p>Pedí permiso antes de subir o reenviar imágenes, capturas o información de otras personas.</p></div></article><article class="tip"><span class="tip-num">6</span><div><strong>Revisá tu rastro</strong><p>Buscá tus perfiles, mirá publicaciones antiguas y eliminá o limitá lo que ya no quieras mostrar.</p></div></article></div></section></main>
+<footer class="footer"><div class="footer-inner"><div><a class="brand" href="#inicio"><span class="brand-icon">⌁</span> RastroSeguro</a><p style="margin-top:8px">Tu privacidad también es parte de tu identidad.</p></div><div><p>Proyecto escolar de TIC · Ciudadanía digital</p><button class="small-btn" id="clearAll" type="button">Borrar progreso guardado</button></div></div></footer>
+<script>
+(()=>{const questions=[{text:'Al subir una foto donde se ve la dirección de tu casa…',options:['La publico igual, no pasa nada.','Reviso la imagen y evito mostrar datos que me ubiquen.','La publico y después veo.'],correct:1,explain:'Evitá mostrar direcciones y otros datos que permitan ubicarte.'},{text:'Una cuenta desconocida te pide tu ubicación en tiempo real…',options:['Se la paso para demostrar confianza.','No la comparto y reviso quién está detrás de la cuenta.','Le mando mi ubicación solo por un ratito.'],correct:1,explain:'No compartas tu ubicación con desconocidos. Si te presionan, bloqueá y pedí ayuda a una persona adulta de confianza.'},{text:'Encontrás una foto vergonzosa de un compañero…',options:['La comparto en el grupo para hacer un chiste.','Pido permiso antes de compartir y respeto si dice que no.','La subo, total ya estaba en internet.'],correct:1,explain:'Respetá la privacidad de los demás: pedí permiso antes de publicar o reenviar imágenes.'}];let current=0,answers=[null,null,null],finished=false;const area=document.getElementById('questionArea'),count=document.getElementById('questionCount'),pct=document.getElementById('questionPct'),bar=document.getElementById('quizProgress'),prev=document.getElementById('prevBtn'),next=document.getElementById('nextBtn'),feedback=document.getElementById('quizFeedback');function renderQuestion(){const q=questions[current],percent=Math.round((current+1)/questions.length*100);count.textContent=`Pregunta ${current+1} de ${questions.length}`;pct.textContent=percent+'%';bar.style.width=percent+'%';area.innerHTML=`<p>${current+1}. ${q.text}</p>`+q.options.map((op,i)=>`<label class="option"><input type="radio" name="answer" value="${i}" ${answers[current]===i?'checked':''}><span>${op}</span></label>`).join('');area.querySelectorAll('input[name="answer"]').forEach(input=>input.addEventListener('change',()=>{answers[current]=Number(input.value);next.disabled=false}));prev.disabled=current===0;next.textContent=current===questions.length-1?'Ver resultado ✓':'Siguiente →';next.disabled=answers[current]===null;feedback.className='feedback';feedback.textContent='';finished=false}function showResults(){const score=answers.reduce((s,a,i)=>s+(a===questions[i].correct?1:0),0);finished=true;count.textContent='¡Quiz terminado!';pct.textContent='100%';bar.style.width='100%';area.innerHTML=`<p>Tu resultado</p><div class="result"><h4>${score} de ${questions.length} respuestas correctas</h4><p>${score===3?'¡Excelente! Reconocés riesgos comunes y elegís cuidar tu privacidad.':score===2?'¡Buen trabajo! Revisá la respuesta que te faltó y seguí practicando decisiones seguras.':'Cada respuesta es una oportunidad para aprender. Repasá estos consejos y volvé a intentarlo.'}</p></div><p class="muted">Recordatorio: pensá antes de publicar, protegé tus datos y respetá la privacidad de los demás.</p>`;prev.disabled=true;next.disabled=false;next.textContent='↻ Repetir quiz';feedback.className='feedback show '+(score>=2?'good':'bad');feedback.innerHTML='<strong>Para recordar:</strong><br>'+questions.map((q,i)=>`<p style="margin:8px 0 0"><b>${i+1}.</b> ${answers[i]===q.correct?'Correcto. ':'Repaso. '}${q.explain}</p>`).join('')}next.addEventListener('click',()=>{if(finished){current=0;answers=[null,null,null];renderQuestion();return}if(answers[current]===null)return;if(current<questions.length-1){current++;renderQuestion()}else showResults()});prev.addEventListener('click',()=>{if(current>0&&!finished){current--;renderQuestion()}});renderQuestion();const habits=[...document.querySelectorAll('.habit')],key='rastroseguro-habitos-v2';function updateHabits(save=true){const n=habits.filter(h=>h.checked).length,p=Math.round(n/habits.length*100);document.getElementById('habitProgress').style.width=p+'%';document.getElementById('progressText').textContent=`${n} de ${habits.length} hábitos`;document.getElementById('progressPct').textContent=p+'%';let title,advice;if(n===0){title='Empezá por un hábito';advice='Un buen primer paso es revisar quién puede ver tus publicaciones y ajustar la privacidad.'}else if(n<=2){title='Vas por buen camino';advice='Incorporá una práctica más esta semana. Te recomendamos proteger tus cuentas con contraseñas únicas.'}else if(n<=4){title='¡Buen progreso!';advice='Ya tenés varias prácticas útiles. Completá la checklist y pedí permiso antes de compartir contenido de otras personas.'}else{title='¡Checklist completa!';advice='Excelente: mantené estos hábitos y revisá tus ajustes de privacidad cada tanto.'}document.getElementById('habitTitle').textContent=title;document.getElementById('habitAdvice').textContent=advice;if(save){try{localStorage.setItem(key,JSON.stringify(habits.map(h=>h.checked)))}catch(e){}}}try{const saved=JSON.parse(localStorage.getItem(key)||'null');if(Array.isArray(saved))habits.forEach((h,i)=>h.checked=saved[i]===true)}catch(e){}habits.forEach(h=>h.addEventListener('change',()=>updateHabits()));updateHabits(false);function reset(){habits.forEach(h=>h.checked=false);try{localStorage.removeItem(key)}catch(e){}updateHabits(false)}document.getElementById('resetHabits').addEventListener('click',reset);document.getElementById('clearAll').addEventListener('click',()=>{reset();current=0;answers=[null,null,null];renderQuestion();document.getElementById('inicio').scrollIntoView({behavior:'smooth'})})
+ const missions=[
+  {emoji:"📸",title:"Antes de publicar",text:"Una foto que querés subir muestra el frente de tu casa y el número de la puerta. ¿Qué hacés?",choices:["Publicarla tal como está.","Editar la foto para ocultar la dirección.","Agregar la ubicación exacta para que la vean todos."],correct:1,why:"Ocultar la dirección ayuda a evitar que desconocidos puedan ubicar tu casa."},
+  {emoji:"📍",title:"Un mensaje inesperado",text:"Una cuenta que no conocés te pide que le mandes tu ubicación en tiempo real. ¿Cómo respondés?",choices:["Se la mando porque solo la verá esa persona.","No la comparto y verifico quién es; si insiste, bloqueo la cuenta.","Le mando la ubicación de mi escuela en vez de mi casa."],correct:1,why:"No compartas tu ubicación con cuentas desconocidas. Si te presionan, bloqueá y hablá con una persona adulta de confianza."},
+  {emoji:"🧑‍🤝‍🧑",title:"La foto de otra persona",text:"Tenés una foto graciosa de un compañero y querés subirla a una historia. ¿Qué hacés?",choices:["Le pregunto si está de acuerdo antes de publicarla.","La publico porque la foto la saqué yo.","La comparto en un grupo para que decidan los demás."],correct:0,why:"Una foto también es parte de la privacidad de otra persona. Pedí permiso y respetá su respuesta."},
+  {emoji:"🔐",title:"Cuidá tus cuentas",text:"Usás la misma contraseña para tus juegos, correo y redes sociales. ¿Cuál es la mejor mejora?",choices:["Compartirla con un amigo para que la recuerde.","Cambiarla por una contraseña distinta para cada cuenta y activar la verificación en dos pasos si se puede.","Usar una contraseña muy corta para escribirla rápido."],correct:1,why:"Las contraseñas únicas reducen el riesgo de que una cuenta comprometida permita entrar a las demás."},
+  {emoji:"🧹",title:"Tu rastro de ayer",text:"Encontrás una publicación antigua que muestra datos personales que ya no querés compartir. ¿Qué conviene hacer?",choices:["Revisar la privacidad y borrarla o limitar quién puede verla.","Dejarla pública porque ya es vieja.","Compartirla otra vez para que se pierda entre otras publicaciones."],correct:0,why:"Revisar publicaciones antiguas ayuda a controlar qué información sigue visible. Recordá que alguien podría haberla guardado o copiado."}
+ ];
+ let missionIndex=0,missionScore=0,missionAnswered=false;
+ const gameContent=document.getElementById("gameContent"),gameRound=document.getElementById("gameRound"),gameScore=document.getElementById("gameScore"),gameProgress=document.getElementById("gameProgress"),gameFeedback=document.getElementById("gameFeedback"),gameNext=document.getElementById("gameNext");
+ function renderMission(){
+  const m=missions[missionIndex];missionAnswered=false;gameRound.textContent=`Misión ${missionIndex+1} de ${missions.length}`;gameScore.textContent=`⭐ ${missionScore} puntos`;gameProgress.style.width=((missionIndex+1)/missions.length*100)+"%";gameFeedback.className="game-feedback";gameFeedback.textContent="";gameNext.disabled=true;gameNext.textContent=missionIndex===missions.length-1?"Ver resultado 🏁":"Siguiente misión →";
+  gameContent.innerHTML=`<div class="game-scene"><div class="game-emoji">${m.emoji}</div><h3>${m.title}</h3><p>${m.text}</p></div><div class="game-choices">${m.choices.map((c,i)=>`<button class="game-choice" type="button" data-choice="${i}"><span class="choice-icon">◯</span><span>${c}</span></button>`).join("")}</div>`;
+  gameContent.querySelectorAll(".game-choice").forEach(btn=>btn.addEventListener("click",()=>chooseMission(Number(btn.dataset.choice))));
+ }
+ function chooseMission(choice){
+  if(missionAnswered)return;missionAnswered=true;const m=missions[missionIndex],ok=choice===m.correct;if(ok)missionScore+=10;gameScore.textContent=`⭐ ${missionScore} puntos`;
+  gameContent.querySelectorAll(".game-choice").forEach((btn,i)=>{btn.disabled=true;if(i===m.correct){btn.classList.add("correct");btn.querySelector(".choice-icon").textContent="✓";}else if(i===choice){btn.classList.add("wrong");btn.querySelector(".choice-icon").textContent="×";}});
+  gameFeedback.className="game-feedback show";gameFeedback.innerHTML=`<strong>${ok?"¡Bien hecho! +10 puntos":"Esta vez no sumaste puntos"}</strong>${m.why}`;gameNext.disabled=false;
+ }
+ function showMissionResult(){
+  const message=missionScore===50?"¡Sos un/a detective de huellas digitales! Tomás decisiones que cuidan tu privacidad y respetan a los demás.":missionScore>=30?"¡Buen trabajo! Ya reconocés varios riesgos. Repasá las misiones en las que dudaste y probá otra vez.":"¡Misión de aprendizaje completada! Revisá los consejos de RastroSeguro y volvé a jugar para practicar decisiones más seguras.";
+  gameRound.textContent="Misión completada";gameScore.textContent=`⭐ ${missionScore} / 50`;gameProgress.style.width="100%";gameContent.innerHTML=`<div class="game-result"><div class="game-emoji">🏆</div><h3>Tu resultado final</h3><div class="game-score">${missionScore} / 50</div><p>${message}</p></div>`;gameFeedback.className="game-feedback";gameFeedback.textContent="";gameNext.disabled=false;gameNext.textContent="↻ Jugar de nuevo";
+ }
+ gameNext.addEventListener("click",()=>{if(gameRound.textContent==="Misión completada"){missionIndex=0;missionScore=0;renderMission();}else if(missionAnswered&&missionIndex<missions.length-1){missionIndex++;renderMission();}else if(missionAnswered&&missionIndex===missions.length-1){showMissionResult();}});
+ renderMission();
+})();
+</script>
+<script>
+(function(){
+ const display=document.getElementById("standaloneTimer");
+ if(!display)return;
+ const startBtn=document.getElementById("standaloneStart");
+ const pauseBtn=document.getElementById("standalonePause");
+ const resetBtn=document.getElementById("standaloneReset");
+ const status=document.getElementById("standaloneStatus");
+ let elapsed=0, startedAt=0, running=false, frame=null;
+ function format(ms){
+   const total=Math.max(0,ms);
+   const mins=Math.floor(total/60000);
+   const secs=Math.floor((total%60000)/1000);
+   const centis=Math.floor((total%1000)/10);
+   return String(mins).padStart(2,"0")+":"+String(secs).padStart(2,"0")+"."+String(centis).padStart(2,"0");
+ }
+ function render(){display.textContent=format(elapsed+(running?performance.now()-startedAt:0));}
+ function tick(){render();if(running)frame=requestAnimationFrame(tick);}
+ function start(){
+   if(running)return;
+   running=true;startedAt=performance.now();startBtn.disabled=true;pauseBtn.disabled=false;
+   status.textContent="Cronómetro en marcha.";frame=requestAnimationFrame(tick);
+ }
+ function pause(){
+   if(!running)return;
+   elapsed+=performance.now()-startedAt;running=false;
+   if(frame!==null)cancelAnimationFrame(frame);
+   render();startBtn.disabled=false;startBtn.textContent="▶ Continuar";pauseBtn.disabled=true;
+   status.textContent="Pausado. Podés continuar o reiniciar.";
+ }
+ function reset(){
+   running=false;if(frame!==null)cancelAnimationFrame(frame);
+   elapsed=0;startedAt=0;frame=null;render();
+   startBtn.disabled=false;startBtn.textContent="▶ Iniciar";pauseBtn.disabled=true;
+   status.textContent="Cronómetro reiniciado. Listo para empezar.";
+ }
+ startBtn.addEventListener("click",start);
+ pauseBtn.addEventListener("click",pause);
+ resetBtn.addEventListener("click",reset);
+ render();
+})();
+</script>
+
+
+<script>
+(function(){
+ const list=document.getElementById("habitList");
+ if(!list)return;
+ const nameInput=document.getElementById("habitName");
+ const addBtn=document.getElementById("habitAdd");
+ const message=document.getElementById("habitMessage");
+ const doneEl=document.getElementById("habitDone");
+ const totalEl=document.getElementById("habitTotal");
+ const percentEl=document.getElementById("habitPercent");
+ const progress=document.getElementById("habitProgress");
+ const progressBar=document.getElementById("habitProgressBar");
+ const dateLabel=document.getElementById("habitToday");
+ const STORAGE_KEY="rastroseguros_habitos_v1";
+ let habits=[];
+ let selectedDate=localDateKey(new Date());
+ function localDateKey(date){
+   return date.getFullYear()+"-"+String(date.getMonth()+1).padStart(2,"0")+"-"+String(date.getDate()).padStart(2,"0");
+ }
+ function prettyDate(key){
+   const [y,m,d]=key.split("-").map(Number);
+   return new Date(y,m-1,d).toLocaleDateString("es-AR",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+ }
+ function load(){
+   try{
+     const saved=localStorage.getItem(STORAGE_KEY);
+     if(saved){const parsed=JSON.parse(saved);if(Array.isArray(parsed))habits=parsed.filter(h=>h&&typeof h.id==="string"&&typeof h.name==="string"&&h.done&&typeof h.done==="object");}
+   }catch(e){message.textContent="No se pudo leer el registro guardado en este navegador.";}
+ }
+ function save(){
+   try{localStorage.setItem(STORAGE_KEY,JSON.stringify(habits));return true;}
+   catch(e){message.textContent="No se pudo guardar. Revisá el espacio disponible del navegador.";return false;}
+ }
+ function escapeHTML(value){
+   return String(value).replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+ }
+ function render(){
+   dateLabel.textContent=prettyDate(selectedDate);
+   if(habits.length===0){
+     list.innerHTML='<div class="habit-empty">Todavía no agregaste hábitos. Probá con uno pequeño y fácil de mantener.</div>';
+   }else{
+     list.innerHTML=habits.map(h=>{
+       const checked=!!h.done[selectedDate];
+       return '<div class="habit-item"><input type="checkbox" id="habit-'+h.id+'" data-id="'+h.id+'" '+(checked?'checked':'')+' aria-label="Marcar '+escapeHTML(h.name)+' como cumplido"><label for="habit-'+h.id+'">'+escapeHTML(h.name)+'<small>'+(checked?'¡Cumplido hoy!':'Objetivo del día')+'</small></label><button class="habit-delete" type="button" data-delete="'+h.id+'" aria-label="Eliminar hábito '+escapeHTML(h.name)+'" title="Eliminar hábito">×</button></div>';
+     }).join("");
+   }
+   const done=habits.filter(h=>!!h.done[selectedDate]).length;
+   const total=habits.length;
+   const pct=total?Math.round(done/total*100):0;
+   doneEl.textContent=done;totalEl.textContent=total;percentEl.textContent=pct+"% completado";
+   progressBar.style.width=pct+"%";progress.setAttribute("aria-valuenow",String(pct));
+   list.querySelectorAll('input[type="checkbox"][data-id]').forEach(cb=>cb.addEventListener("change",()=>{
+     const habit=habits.find(h=>h.id===cb.dataset.id);
+     if(!habit)return;
+     if(cb.checked)habit.done[selectedDate]=true;else delete habit.done[selectedDate];
+     save();render();
+     message.textContent=cb.checked?"¡Bien hecho! Registraste un hábito para este día.":"Se actualizó tu registro.";
+   }));
+   list.querySelectorAll("[data-delete]").forEach(btn=>btn.addEventListener("click",()=>{
+     const habit=habits.find(h=>h.id===btn.dataset.delete);
+     if(!habit)return;
+     if(!confirm('¿Querés eliminar el hábito "'+habit.name+'"? Se borrará también su historial.'))return;
+     habits=habits.filter(h=>h.id!==btn.dataset.delete);save();render();message.textContent="Hábito eliminado.";
+   }));
+ }
+ function addHabit(){
+   const name=nameInput.value.trim();
+   if(!name){message.textContent="Escribí el nombre de un hábito primero.";nameInput.focus();return;}
+   if(habits.some(h=>h.name.toLocaleLowerCase("es-AR")===name.toLocaleLowerCase("es-AR"))){message.textContent="Ese hábito ya está en tu lista.";return;}
+   habits.push({id:(Date.now().toString(36)+Math.random().toString(36).slice(2,8)),name:name,done:{}});
+   save();nameInput.value="";render();message.textContent="Hábito agregado. Marcá la casilla cuando lo cumplas.";nameInput.focus();
+ }
+ addBtn.addEventListener("click",addHabit);
+ nameInput.addEventListener("keydown",e=>{if(e.key==="Enter")addHabit();});
+ document.getElementById("habitTodayBtn").addEventListener("click",()=>{selectedDate=localDateKey(new Date());render();message.textContent="Estás viendo el registro de hoy.";});
+ document.getElementById("habitClearToday").addEventListener("click",()=>{
+   habits.forEach(h=>delete h.done[selectedDate]);save();render();message.textContent="Se desmarcaron los hábitos de este día.";
+ });
+ document.getElementById("habitExport").addEventListener("click",()=>{
+   const rows=[["Hábito","Fecha","Cumplido"]];
+   habits.forEach(h=>{
+     const dates=Object.keys(h.done).sort();
+     if(!dates.length)rows.push([h.name,"Sin registros",""]);
+     else dates.forEach(date=>rows.push([h.name,date,h.done[date]?"Sí":"No"]));
+   });
+   const csv=rows.map(row=>row.map(cell=>'"'+String(cell).replace(/"/g,'""')+'"').join(",")).join("\r\n");
+   const blob=new Blob(["\uFEFF"+csv],{type:"text/csv;charset=utf-8;"});
+   const url=URL.createObjectURL(blob);const a=document.createElement("a");
+   a.href=url;a.download="registro-de-habitos.csv";document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
+   message.textContent="Registro exportado como archivo CSV.";
+ });
+ load();render();
+})();
+</script>
+
+</body></html>
